@@ -67,8 +67,8 @@ app.get('/profile/:id', function (req, res) {
   MongoClient.connect(mongoURL, function (err, db) {
     const robots = db.collection('robots');
     let userid = parseInt(req.params.id);
-    console.log(userid);
-    console.log(typeof userid);
+    // console.log(userid);
+    // console.log(typeof userid);
     robots.find({id: userid}).toArray(function (err, docs) {
       res.render("profile", {robots: docs})
     })

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Robot Directory</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <h1 id="directory">Robot Directory</h1>
+      <a href="/">Home</a>
+      <a href="/forhire">View Robots for Hire</a>
+      <a href="/working">View Working Robots</a>
+
+      <div class="robots">
+        {{#robots}}
+        <div class="robot-profile">
+            <img class = "avatar" src="{{avatar}}" alt="">
+            <a href="/directory/{{id}}">{{name}}</a>
+            {{#job}}
+              <p>{{job}}, {{company}}</p>
+            {{/job}}
+            {{^job}}
+              <p>Available for hire!</p>
+            {{/job}}
+        </div>
+        {{/robots}}
+      </div>
+
+    </div>
+
+  </body>
+</html>

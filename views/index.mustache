@@ -10,15 +10,20 @@
 
     <div class="wrapper">
       <h1 id="directory">Robot Directory</h1>
-      <a href="/">Home</a>
-      <a href="/forhire">View Robots for Hire</a>
-      <a href="/working">View Working Robots</a>
+      <div class="nav">
+        <a class="button" href="/">Home</a>
+        <a class="button" href="/forhire">View Robots for Hire</a>
+        <a class="button" href="/working">View Working Robots</a>
+      </div>
+
+      {{#skills}}<h2>Skills: {{skills}}</h2>{{/skills}}
+      {{#country}}<h2>Country: {{enterCountry}}</h2>{{/country}}
 
       <div class="robots">
         {{#robots}}
         <div class="robot-profile">
             <img class = "avatar" src="{{avatar}}" alt="">
-            <a href="/directory/{{id}}">{{name}}</a>
+            <a href="/profile/{{id}}">{{name}}</a>
             {{#job}}
               <p>{{job}}, {{company}}</p>
             {{/job}}
